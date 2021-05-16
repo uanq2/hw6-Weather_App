@@ -1,1 +1,1 @@
-# hw6-Weather_App
+# Weather Application
