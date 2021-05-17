@@ -8,8 +8,8 @@ header {
     padding: 0.3rem;
 }
 
-.column.is-narrow {
-    margin: 10px;
+.tile.is-ancestor {
+    margin-left: 3px;
 }
 
 .title.is-5 {
@@ -19,19 +19,35 @@ header {
 
 .button, hr {
     width: 100%;
+    margin-bottom: 15px;
 }
 
 .input {
     margin-bottom: 10px;
 }
 
-.container {
+.is-9.container {
     border: solid black;
     border-width: thin;
-    margin: 25px 0px 25px 0px;
+    margin-top: 25px;
+}
+
+.is-child.box {
+    display: inline-block;
+    background-color: rgb(29, 25, 65);
+    color: white;
+    font-weight: bolder;
 }
 
 p {
     margin-bottom: 15px;
 }
 
+.is-9.containerTwo {
+    padding: 0px;
+    margin-top: 10px;
+}
+
+.tile.is-parent {
+    display: inline-block;
+}

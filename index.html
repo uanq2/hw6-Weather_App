@@ -15,22 +15,74 @@
     <header>Weather Dashboard</header>
     <!-- left column -->
     <!-- form: label (search for a city) -->
-    <div class="columns">
-        <div class="column is-narrow">
-            <h1 class="title is-5">Search for a City:</h1>
-            <input class="input" type="text" placeholder="Type a City">
-            <button class="button is-link is-hovered">Search</button>
-            <hr>
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <article class="tile is-child">
+                <h1 class="title">Search for a City:</h1>
+                <input class="input" type="text" placeholder="Type a City">
+                <button class="button is-link is-hovered">Search</button>
+                <hr>
+                <button class="button is-light">City</button>
+            </article>
+        </div>
+        <div class="tile is-parent is-9 container">
+            <article class="tile is-child">
+                <h2 class="title">City (00/00/0000)</h2>
+                <p>Temp:</p>
+                <p>Wind:</p>
+                <p>Humidity:</p>
+                <p>UV Index:<span class="index"></span></p>
+        </div>
+        </article>
+    </div>
+    </div>
+    <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <button class="button is-light">City</button>
+            <button class="button is-light">City</button>
+            <button class="button is-light">City</button>
+            <button class="button is-light">City</button>
+            <button class="button is-light">City</button>
             <button class="button is-light">City</button>
         </div>
-        <div class="column container">
-            <h2 class="title"> Name of City</h2>
-            <p>Temp:</p>
-            <p>Wind:</p>
-            <p>Humidity:</p>
-            <p>UV Index: <span class="index"></span></p>
+        <div class="tile is-parent is-9 containerTwo">
+            <article class="tile is-child">
+                <h3 class="title">5-Day Forecast:</h3>
+                <article class="tile is-child box">
+                    <p>00/00/0000</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
+                </article>
+                <article class="tile is-child box">
+                    <p>00/00/0000</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
+                </article>
+                <article class="tile is-child box">
+                    <p>00/00/0000</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
+                </article>
+                <article class="tile is-child box">
+                    <p>00/00/0000</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
+                </article>
+                <article class="tile is-child box">
+                    <p>00/00/0000</p>
+                    <p>Temp:</p>
+                    <p>Wind:</p>
+                    <p>Humidity:</p>
+                </article>
         </div>
+        </article>
     </div>
+    </div>
+
 
     <!-- color of uv index -->
     <!-- container for five day forecast (loop) -->
