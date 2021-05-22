@@ -19,31 +19,27 @@
         <div class="tile is-parent">
             <article class="tile is-child">
                 <h1 class="title">Search for a City:</h1>
-                <input class="input" type="text" placeholder="Type a City">
-                <button class="button is-link is-hovered">Search</button>
+                <input id="inputSearch" class="input" type="text" placeholder="Type a City">
+                <button id="searchBtn" class="button is-link is-hovered">Search</button>
+                <div id="pastCity" class="button is-light">
+                </div>
                 <hr>
-                <button class="button is-light">City</button>
+                <!-- <button class="button is-light">City</button> -->
             </article>
         </div>
         <div class="tile is-parent is-9 container">
             <article class="tile is-child">
-                <h2 class="title">City (00/00/0000)</h2>
-                <p>Temp:</p>
-                <p>Wind:</p>
-                <p>Humidity:</p>
-                <p>UV Index:<span class="index"></span></p>
+                <h2 id="city" class="title">City (00/00/0000)</h2>
+                <p id="temp">Temp:</p>
+                <p id="wind">Wind:</p>
+                <p id="humidity">Humidity:</p>
+                <p id="index">UV Index:<span class="index"></span></p>
         </div>
         </article>
     </div>
     </div>
     <div class="tile is-ancestor">
         <div class="tile is-parent">
-            <button class="button is-light">City</button>
-            <button class="button is-light">City</button>
-            <button class="button is-light">City</button>
-            <button class="button is-light">City</button>
-            <button class="button is-light">City</button>
-            <button class="button is-light">City</button>
         </div>
         <div class="tile is-parent is-9 containerTwo">
             <article class="tile is-child">
@@ -87,6 +83,7 @@
     <!-- color of uv index -->
     <!-- container for five day forecast (loop) -->
     <!-- date, icon for weather, temp, wind, humidity -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 
