@@ -27,6 +27,12 @@ function init() {
     console.log('no data');
 }
 
+function checkValue(e) {
+    console.log();
+    let selectedCity = e.target.getAttribute("data-past");
+    getLatLon(selectedCity);
+}
+
 function makePastBtn(cities) {
     for (i = 0; i < cities.length; i++) {
         $("#pastCity").prepend(
@@ -84,8 +90,7 @@ getWeather();
 // check local storage for that city, don't add if already there
 // events ////////////////////////////////////////////////////////////////////
 // init - check local storage
+$("#searchBtn").on("click", () => getWeather());
 init();
 // click search button - call the api and get our cream filling
 // click on past city button (class) - just call the getWeather function with the label of the button
-
-$("#searchBtn").on("click", () => getWeather());
