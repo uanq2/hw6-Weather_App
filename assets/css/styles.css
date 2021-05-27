@@ -1,3 +1,7 @@
+*{
+    box-sizing: border-box; 
+}
+
 header {
     background: linear-gradient(#370ecc, #0474f3);
     color: white;
@@ -12,6 +16,12 @@ header {
     margin-left: 3px;
 }
 
+h3 {
+    display: grid;
+    font-weight: bold;
+    font-size: x-large;
+}
+
 .title.is-5 {
     font-weight: 800;
     font-size: 30px;
@@ -22,6 +32,17 @@ header {
     margin-bottom: 15px;
 }
 
+li {
+    background-color: lightgray;
+    padding: .5rem;
+    border-radius: 3px;
+    margin-bottom: .2rem;
+}
+
+li:hover{
+    background-color: lightslategray;
+}
+
 .input {
     margin-bottom: 10px;
 }
@@ -29,7 +50,12 @@ header {
 .is-9.container {
     border: solid black;
     border-width: thin;
-    margin-top: 25px;
+    display: table;
+    margin: 25px 25px 0px 0px;
+}
+
+.is-9.containerTwo {
+    margin-left: auto;
 }
 
 .is-child.box {
@@ -41,13 +67,4 @@ header {
 
 p {
     margin-bottom: 15px;
-}
-
-.is-9.containerTwo {
-    padding: 0px;
-    margin-top: 10px;
-}
-
-.tile.is-parent {
-    display: inline-block;
 }
