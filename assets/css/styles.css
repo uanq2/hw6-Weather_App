@@ -1,10 +1,16 @@
+/* Global Variables */
+:root {
+    --main-color: #276cda;
+    --secondary-color: #ffffff;
+}
+
 *{
     box-sizing: border-box; 
 }
 
 header {
-    background: linear-gradient(#370ecc, #0474f3);
-    color: white;
+    background: linear-gradient(#276cda, #6298ee);
+    color: var(--secondary-color);
     font-weight: 700;
     font-size: 40px;
     display: flex;
@@ -12,6 +18,7 @@ header {
     padding: 0.3rem;
 }
 
+/* Cards */
 .tile.is-ancestor {
     margin-left: 3px;
 }
@@ -27,27 +34,35 @@ h3 {
     font-size: 30px;
 }
 
-.button, hr {
+.button {
     width: 100%;
-    margin-bottom: 15px;
 }
 
+hr {
+    width: 100%;
+    margin-bottom: -5px 0px 15px 0px;
+}
+/* Searched cities buttons */
 li {
     background-color: lightgray;
-    padding: .5rem;
-    border-radius: 3px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
     margin-bottom: .2rem;
+    padding: .5rem;
 }
 
 li:hover{
-    background-color: lightslategray;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
 }
 
 .input {
-    margin-bottom: 10px;
+    margin: 15px 0px 5px 0px;
 }
-
+/* containers */
 .is-9.container {
+    border-radius: 5px;
     border: solid black;
     border-width: thin;
     display: table;
@@ -60,9 +75,13 @@ li:hover{
 
 .is-child.box {
     display: inline-block;
-    background-color: rgb(29, 25, 65);
-    color: white;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
     font-weight: bolder;
+}
+
+.tile.is-child {
+    margin-bottom: 10px;
 }
 
 p {

@@ -13,13 +13,12 @@
 
 <body>
     <header>Weather Dashboard</header>
-
+    <!-- Side search form -->
     <div class="tile is-ancestor">
         <div class="tile is-parent">
             <article class="tile is-child">
-                <h1 class="title">Search for a City:</h1>
                 <div class="input-group mb-3">
-                    <input class="input" type="text" placeholder="Type a City" id="search-city">
+                    <input class="input" type="text" placeholder="Search for a City" id="search-city">
                     <button class="button is-link is-hovered" id="search-button">Search</button>
                 </div>
                 <hr>
@@ -27,55 +26,54 @@
                     <li class="button is-light" data-value=""></li>
                 </ul>
         </div>
+        <!-- Container for current weather -->
         <div class="tile is-parent is-9 container">
             <article class="tile is-child" id="current-weather">
                 <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
-                <p>Temp:<span id="temperature"></span></p>
-                <p>Wind:<span id="wind-speed"></span></p>
-                <p>Humidity:<span id="humidity"></span></p>
-                <p>UV index:<span class="notification is-danger rounded py-2 px-2 text-white" id="uv-index"></span>
+                <p>Temp: <span id="temperature"></span></p>
+                <p>Wind: <span id="wind-speed"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>UV index: <span class="notification is-danger rounded py-2 px-2 text-white" id="uv-index"></span>
                 </p>
             </article>
         </div>
     </div>
-
+    <!-- Container for next 5 days forecast -->
     <div class="tile is-parent is-9 containerTwo" id="future-weather">
         <article class="tile is-child">
             <h2 class="title">5-Day Forecast:</h2>
             <article class="tile is-child box">
                 <p id="fDate0"></p>
                 <p id="fImg0"></p>
-                <p>Temp:<span id="fTemp0"></span></p>
-                <p>Humidity:<span id="fHumidity0"></span></p>
+                <p>Temp: <span id="fTemp0"></span></p>
+                <p>Humidity: <span id="fHumidity0"></span></p>
             </article>
             <article class="tile is-child box">
                 <p id="fDate1"></p>
                 <p id="fImg1"></p>
-                <p>Temp:<span id="fTemp1"></span></p>
-                <p>Humidity:<span id="fHumidity1"></span></p>
+                <p>Temp: <span id="fTemp1"></span></p>
+                <p>Humidity: <span id="fHumidity1"></span></p>
             </article>
             <article class="tile is-child box">
                 <p id="fDate2"></p>
                 <p id="fImg2"></p>
-                <p>Temp:<span id="fTemp2"></span></p>
-                <p>Humidity:<span id="fHumidity2"></span></p>
+                <p>Temp: <span id="fTemp2"></span></p>
+                <p>Humidity: <span id="fHumidity2"></span></p>
             </article>
             <article class="tile is-child box">
                 <p id="fDate3"></p>
                 <p id="fImg3"></p>
-                <p>Temp:<span id="fTemp3"></span></p>
-                <p>Humidity:<span id="fHumidity3"></span></p>
+                <p>Temp: <span id="fTemp3"></span></p>
+                <p>Humidity: <span id="fHumidity3"></span></p>
             </article>
             <article class="tile is-child box">
                 <p id="fDate4"></p>
                 <p id="fImg4"></p>
-                <p>Temp:<span id="fTemp4"></span></p>
-                <p>Humidity:<span id="fHumidity4"></span></p>
+                <p>Temp: <span id="fTemp4"></span></p>
+                <p>Humidity: <span id="fHumidity4"></span></p>
             </article>
     </div>
     </article>
-    </div>
-    </div>
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="./assets/js/main.js"></script>
