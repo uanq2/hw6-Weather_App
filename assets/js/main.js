@@ -9,9 +9,9 @@ let currentWSpeed = $("#wind-speed");
 let currentUvIndex = $("#uv-index");
 let cities = [];
 
-function find(c) {
+function find(cityList) {
     for (let i = 0; i < cities.length; i++) {
-        if (c.toLowerCase() === cities[i]) {
+        if (cityList.toLowerCase() === cities[i]) {
             return -1;
         }
     }
@@ -27,7 +27,7 @@ function displayWeather(event) {
 }
 
 function getWeather(city) {
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + apiKey;
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
     $.ajax({
         url: queryURL,
         method: "GET",
@@ -40,8 +40,8 @@ function getWeather(city) {
         let tempF = (response.main.temp - 273.15) * 1.80 + 32;
         $(currentTemperature).html((tempF).toFixed(2) + "&#8457");
         $(currentHumidity).html(response.main.humidity + "%");
-        let ws = response.wind.speed;
-        let windsMPH = (ws * 2.237).toFixed(1);
+        let windSpeed = response.wind.speed;
+        let windsMPH = (windSpeed * 2.237).toFixed(1);
         $(currentWSpeed).html(windsMPH + "MPH");
         UVIndex(response.coord.lon, response.coord.lat);
         forecast(response.id);
@@ -67,17 +67,21 @@ function getWeather(city) {
 }
 
 function UVIndex(ln, lt) {
-    let uvqURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + lt + "&lon=" + ln;
+    let uvqURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lt + "&lon=" + ln + "&exclude=hourly&appid=" + apiKey
     $.ajax({
         url: uvqURL,
         method: "GET"
     }).then(function (response) {
-        $(currentUvIndex).html(response.value);
+        $(currentUvIndex).html(response.daily[0].uvi);
+        $("#one").html(response.daily[1].uvi);
+        $("#two").html(response.daily[2].uvi);
+        $("#three").html(response.daily[3].uvi);
+        $("#four").html(response.daily[4].uvi);
+        $("#five").html(response.daily[5].uvi);
     });
 }
 
 function forecast(cityId) {
-    let dayOver = false;
     let queryForecastURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityId + "&appid=" + apiKey;
     $.ajax({
         url: queryForecastURL,
@@ -86,8 +90,8 @@ function forecast(cityId) {
 
         for (i = 0; i < 5; i++) {
             let date = new Date((response.list[((i + 1) * 8) - 1].dt) * 1000).toLocaleDateString();
-            let iconcode = response.list[((i + 1) * 8) - 1].weather[0].icon;
-            let iconUrl = "https://openweathermap.org/img/wn/" + iconcode + ".png";
+            let iconCode = response.list[((i + 1) * 8) - 1].weather[0].icon;
+            let iconUrl = "https://openweathermap.org/img/wn/" + iconCode + ".png";
             let tempK = response.list[((i + 1) * 8) - 1].main.temp;
             let tempF = (((tempK - 273.5) * 1.80) + 32).toFixed(2);
             let humidity = response.list[((i + 1) * 8) - 1].main.humidity;
@@ -100,10 +104,10 @@ function forecast(cityId) {
     });
 }
 
-function addToList(c) {
-    let listEl = $("<li>" + c.toLowerCase() + "</li>");
+function addToList(cityList) {
+    let listEl = $("<li>" + cityList.toLowerCase() + "</li>");
     $(listEl).attr("class", "list-group-item");
-    $(listEl).attr("data-value", c.toLowerCase());
+    $(listEl).attr("data-value", cityList.toLowerCase());
     $(".list-group").append(listEl);
 }
 
