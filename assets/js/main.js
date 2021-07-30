@@ -31,7 +31,6 @@ function getWeather(city) {
     fetch(queryURL)
         .then(data => data.json())
         .then(response => {
-            console.log(response);
             let weatherIcon = response.weather[0].icon;
             let iconUrl = "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
             let date = new Date(response.dt * 1000).toLocaleDateString();
